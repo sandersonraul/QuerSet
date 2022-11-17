@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block main %}
+<h1>Produtos</h1>
+<table class="table table-striped" style="margin-top: 30px ; width: 400px;">
+  <thead>
+    <tr>
+      <th scope="col">Descrição</th>
+      <th scope="col">Preço</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for produto in produtos %}
+      <tr>
+        <td>{{produto.titulo}}</td>
+        <td>{{produto.preço}} R$</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

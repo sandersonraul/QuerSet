@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block main %}
+<h1>Pedidos</h1>
+<table class="table table-striped" style="margin-top: 30px ;">
+  <thead>
+    <tr>
+      <th scope="col">Nome do cliente</th>
+      <th scope="col">Produtos</th>
+      <th scope="col">Status</th>
+      <th scope="col">Valor total</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for pedido in pedidos %}
+      <tr>
+        <th scope="row">{{pedido.cliente_id__nome}}</th>
+        <td>{{pedido.produtos__titulo}}</td>
+        <td>{{pedido.status}}</td>
+        <td>{{pedido.valor}} R$</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
